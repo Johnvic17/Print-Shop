@@ -38,16 +38,46 @@ html {
     max-width: 100%;
 }
 
-section {
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.navbar-fixed.scrolled {
+    opacity: 0.6;
+}
+
+.nav-link{
+    cursor: pointer;
+}
+
+.section-main {
     width: 100%;
     min-height: 100vh;
     background-color: #000;
     overflow: hidden;
 }
 
-.logo{
-    max-width: 5%;
-    max-height: 5%;
+.logo {
+    display: block;
+    width: 60px;
+    height: auto;
+    max-width: 100%;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    width: auto;
+    flex: 0 0 auto;
+    cursor: pointer;
 }
 
 .logoGrafica {
@@ -144,6 +174,39 @@ input {
     object-position: center;
 }
 
+.icon {
+    background-color: #212529;
+    border-color: #6a14a7;
+}
+
+.icon:hover {
+    background-color: #6a14a7;
+    transition: 1s;
+}
+
+/* =========================
+   MAPA
+========================= */
+
+.mapa-section {
+    width: 100%;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.mapa-container {
+    width: 100%;
+    aspect-ratio: 1774 / 400;
+    overflow: hidden;
+}
+
+.mapa-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
 /* CELULAR */
 
 @media (max-width: 576px) {
@@ -180,5 +243,21 @@ input {
 
     .text-center p {
         margin-bottom: 20px;
+    }
+
+     /* Mapa */
+    .mapa-section {
+        min-height: 0;
+        width: 100%;
+    }
+
+    .mapa-container {
+        width: 100%;
+        aspect-ratio: 1774 / 887;
+    }
+
+    .mapa-container iframe {
+        width: 100%;
+        height: 100%;
     }
 }

@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             throw new Error(`Erro HTTP: ${res.status}`);
         }
         
-        const html = await res.text();
+        const html = await res.text(); 
 
         const navbar = document.getElementById("navbar");
 

@@ -3,6 +3,7 @@ const buttonsScript = document.currentScript;
 const projectRoot = new URL("../", buttonsScript.src);
 
 document.addEventListener("click", (e) => {
+
     const el = e.target.closest("[data-action]");
 
     if (!el) return;
@@ -13,63 +14,48 @@ document.addEventListener("click", (e) => {
 
     switch (action) {
 
-        case "rule":
+        case "about":
             window.location.href = new URL(
-                "pages/Rule/rule.html",
+                "pages/about/about.html",
                 projectRoot
             );
             break;
 
-        case "organization":
+        case "services":
             window.location.href = new URL(
-                "pages/Organization/organization.html",
+                "pages/services/services.html",
                 projectRoot
             );
             break;
-
-        case "reserve":
-            window.location.href = new URL(
-                "pages/Reserve/reserve.html",
-                projectRoot
-            );
-            break;
-
-        case "simulator":
-            window.location.href = new URL(
-                "pages/Simulator/simulator.html",
-                projectRoot
-            );
-            break;
-
-        case "whatIs":
-            window.location.href = new URL(
-                "pages/WhatIs/whatIs.html",
-                projectRoot
-            );
-            break;
-
-        case "tips":
-            window.location.href = new URL(
-                "pages/Tips/tips.html",
-                projectRoot
-            );
-            break;
-
-        case "503020":
-            window.location.href = new URL(
-                "pages/503020/503020.html",
-                projectRoot
-            );
-            break;
-
-        case "home":
+            
+         case "home":
             window.location.href = new URL(
                 "index.html",
                 projectRoot
             );
-            break;        
+            break; 
 
         default:
             console.warn("Ação não tratada:", action);
     }
+
+});
+
+
+// =========================
+// NAVBAR AO ROLAR
+// =========================
+
+window.addEventListener("scroll", function () {
+
+    const navbar = document.querySelector(".navbar-fixed");
+
+    if (!navbar) return;
+
+    if (window.scrollY > 0) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+
 });
